@@ -1,0 +1,17 @@
+meta 的属性有两种：name和http-equiv
+ 
+1.name属性主要用于描述网页，对应于content（网页内容），以便于搜索引擎机器人查找、分类（目前几乎所有的搜索引擎都使用 
+网上机器人自动查找meta值来给网页分类）。这其中最重要的是description（站点在搜索引擎上的描述）和
+keywords（分类关键词），所以应该给每页加一个meta值。比较常用的有以下几个： 
+1、＜meta name="Generator" contect=""＞用以说明生成工具（如Microsoft FrontPage 4.0）等； 
+
+2、＜meta name="KEYWords" contect=""＞向搜索引擎说明你的网页的关键词； 
+
+3、＜meta name="DEscription" contect=""＞告诉搜索引擎你的站点的主要内容； 
+
+4、＜meta name="Author" contect="你的姓名"＞告诉搜索引擎你的站点的制作的作者； 
+
+
+2.http-equiv 属性提供了 content 属性的信息/值的 HTTP 头。
+
+http-equiv 属性可用于模拟一个 HTTP 响应头。

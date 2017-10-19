@@ -1,0 +1,8 @@
+  transform: translate(-50%);  //transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。
+				这里的translate为向左移动50%的宽度
+  
+  findIndex //arrayObj(必需，数组函数) callbackfn(必需，用于测试数组中的每个元素的回调函数) 
+	对于数组中的每个元素，findIndex 方法都会调用一次回调函数（采用升序索引顺序），直到有元素返回 true。
+	只要有一个元素返回 true，findIndex 立即返回该返回 true 的元素的索引值。如果数组中没有任何元素返回 true，则 findIndex 返回 -1。
+
+  这是 JSX 内唯一的约束：只有表达式。例如，你不能使用 if 语句，但三元表达式是可以的。

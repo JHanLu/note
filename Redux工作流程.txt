@@ -1,0 +1,14 @@
+	一、用户发出Action
+		store.dispatch(action)
+
+	二、Store自动调用Reducer，传入两个参数，当前的state和action，Reducer会返回新的state
+		let nextState = todoApp(preState,action)；
+
+	三、State一旦有变化，Store会调用监听函数
+		store.subscribe(listener)；
+
+	四、listener可以通过store.getState()得到当前状态。如果使用的是 React，这时可以触发重新渲染 View
+		function listerner() {
+  			let newState = store.getState()；
+  			component.setState(newState)；
+		}

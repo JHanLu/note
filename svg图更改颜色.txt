@@ -1,0 +1,2 @@
+1.将文件中的fill属性去掉，再在css中设置 svg{ fill:#fff; }
+2.将文件中的fill属性设为“currentColor”，在css中设置color属性即可

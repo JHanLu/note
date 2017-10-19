@@ -1,0 +1,10 @@
+利用var的的定义会将声明提升到函数顶部，初始化操作留在远处执行。
+eg：
+    console.log(typeof(value));
+     => 		var vlaue;
+    var value="blue";  //undefined     		console.log(typeof(value);	
+                                       		value="blue"
+   
+    console.log(typeof(value));
+    
+    let(const) value="blue";  //error

@@ -1,0 +1,8 @@
+字符串转JSON对象
+var obj = eval('('+str+')');//不推荐使用
+var obj = str.parseJSON();
+var obj = JSON.parse(str);
+
+JSON对象转字符串
+var last = obj.toJSONString();
+var last = JSON.stringify(obj);
