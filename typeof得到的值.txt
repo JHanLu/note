@@ -1,0 +1,4 @@
+typeof(null) //Object
+typeof(undefined) //undefined
+typeof(array) //Object
+typeof(function) //function
