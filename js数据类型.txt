@@ -1,0 +1,20 @@
+5中基本数据类型：(存放在栈中)
+null, undefined, number, string, boolean
+
+引用数据类型：（栈区域存放变量以及指向堆区域存储位置的指针，内容存放在堆中）
+Object, Array, Function 等
+
+基本数据类型赋值是传值，引用类型是传址
+
+赋值（=）和浅拷贝的区别，赋值是同一个引用。
+
+//浅拷贝代码
+function shallowCopy(src) {
+    var dst = {};
+    for (var prop in src) {
+        if (src.hasOwnProperty(prop)) {
+            dst[prop] = src[prop];
+        }
+    }
+    return dst;
+}
