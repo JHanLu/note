@@ -1,0 +1,24 @@
+使用export defalut时，对应的import语句不需要使用大括号。
+不使用export defalut时，对应的import语句需要用大括号。
+
+* export default命令用于指定模块的默认输出。显然，一个模块只能有一个默认输出，
+因此export default命令只能使用一次。所以，import命令后面才不用加大括号，因为只可能对应一个方法。
+
+// 第一组
+export default function crc32() { // 输出
+  // ...
+}
+
+import crc32 from 'crc32'; // 输入
+
+
+// 第二组
+export function crc32() { // 输出
+  // ...
+};
+
+import {crc32} from 'crc32'; // 输入
+
+
+如果想在一条import语句中，同时输入默认方法和其他接口，可以写成下面这样。
+ import _, { each, each as forEach } from 'lodash';
