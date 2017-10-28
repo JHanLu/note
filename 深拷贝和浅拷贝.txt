@@ -1,0 +1,45 @@
+	和原数据是否指向同一对象   第一层数据为基本数据类型    原数据中包含子对象
+
+赋值      是                      改变会使原数据一同改变      改变会使原数据一同改变
+
+浅拷贝    否                      改变不会使原数据一同改变    改变会使原数据一同改变
+
+深拷贝    否                      改变不会使原数据一同改变    改变不会使原数据一同改变
+
+
+浅拷贝代码：
+function shallowCopy(src) {
+    var dst = {};
+    for(var prop in src) {
+	if(src.hasOwnProperty(prop)) {
+		dst[prop] = src[prop];
+	}
+    }
+	return dst;
+}
+
+深拷贝代码：
+//target 目标对象
+//source 合并对象
+//deep   是否执行深度合并
+function extend(target, source, deep) {
+    for(key in source) {
+	if(deep && (isPlainObject(source[key])) || (isArray(source[key]))) {
+	    // source[key] 是对象，而 target[key] 不是对象， 则 target[key] = {} 初始化一下，否则递归会出错的
+	    if (isPlainObject(source[key]) && !isPlainObject(target[key])) {
+	     	target[key] = {};
+	    }
+
+	    // source[key] 是数组，而 target[key] 不是数组，则 target[key] = [] 初始化一下，否则递归会出错的
+            if (isArray(source[key]) && !isArray(target[key])){
+		target[key] = [];
+	    }
+	    
+            //执行递归
+	    extend(target[key], source[key], deep)
+	}
+
+	// 不满足以上条件，说明 source[key] 是一般的值类型，直接赋值给 target 就是了
+	else if(source[key] !== undefined) target[key] = source[key]
+    }	
+}

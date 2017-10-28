@@ -1,3 +1,5 @@
+typeof可能的结果：undefined, boolean, string, number, object, function 6种
+
 typeof(null) //Object
 typeof(undefined) //undefined
 typeof(array) //Object
