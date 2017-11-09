@@ -1,0 +1,6 @@
+1. HttpOnly属性告之浏览器该 cookie 绝不能通过JavaScript的document.cookie属性访问。
+2. domain属性可以使多个web服务器共享cookie。
+3. 只有path属性匹配向服务器发送的路径，Cookie 才会发送。必须是绝对路径</li>
+4. secure属性用来指定Cookie只能在加密协议HTTPS下发送到服务器。
+5. max-age属性用来指定Cookie有效期。
+6. expires属性用于指定Cookie过期时间。它的格式采用Date.toUTCString()的格式。
