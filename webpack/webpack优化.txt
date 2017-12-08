@@ -1,0 +1,24 @@
+插件：
+UglifyJsPlugin（压缩代码，去除空格等，减小文件体积）
+webpack.optimize.CommonsChunkPlugin (将"多次被引用"的文件打包到一个公用的js文件中)
+
+
+拆分文件：
+我们在使用的js库如vue或者react等的时候，webpack会将它们一起打包，
+react和react-dom文件就好几百k，全部打包成一个文件，可想而知，这个文件会很大，
+用户在首次打开时就往往会出现白屏等待时间过长的问题，这时，我们就需要将这类文件抽离出来。
+
+
+
+```
+externals: {
+        "react": "React",
+        "react-dom": "ReactDOM"
+    }
+```
+externals，它和plugins是平级。左侧key表示依赖，右侧value表示文件中使用的对象,这样做之后则需要对这个
+文件进行单独地引入使用了
+
+浏览器资源缓存：
+一旦我们更新版本之后，客户没有去清除缓存，同时缓存还没有过期的情况下，就无法加载到最新的资源。
+这时我们就需要hash值来进行版本控制。

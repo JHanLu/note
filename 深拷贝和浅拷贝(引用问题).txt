@@ -9,8 +9,8 @@
 
 Ç³¿½±´´úÂë£º
 function shallowCopy(src) {
-    var dst = {};
-    for(var prop in src) {
+    let dst = {};
+    for(let prop in src) {
 	if(src.hasOwnProperty(prop)) {
 		dst[prop] = src[prop];
 	}

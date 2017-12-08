@@ -12,7 +12,11 @@ Babel其实是一个编译JavaScript的平台(es6, es7, react的jsx)
 loader: 
 css-loader使你能够使用类似@import 和 url(...)的方法实现 require()的功能,style-loader将所有的计算后的样式加入
 页面中，二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中。
-**注意多种loader的写法
+**注意多种loader的写法（webpack是按照右到左的顺序执行loader）
+
+style-loader 将css插入到页面的style标签
+css-loader 是处理css文件中的url()等
+less-loader 是将less文件编译成css
 
 插件（Plugins）：loaders是在打包构建过程中用来处理源文件的（JSX，Scss，Less..），一次处理一个，插件并不直接操作单个文件，
 它直接对整个构建过程其作用。

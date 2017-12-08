@@ -1,0 +1,23 @@
+object删除属性：
+var thisIsObject= {
+   'Cow' : 'Moo',
+   'Cat' : 'Meow',
+   'Dog' : 'Bark'
+};
+
+delete thisIsObject["Cow"]; //return true;
+
+设置字符串为object属性名：
+es5:
+var thetop = "top";
+var aniArgs = {};
+aniArgs[thetop] = 10; 
+
+es6:
+var thetop = "top",
+    obj = { [thetop]: 10 };
+
+
+_.find //todo
+_.pick //todo combine
+_.omit
