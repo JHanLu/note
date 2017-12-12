@@ -6,6 +6,11 @@ var thisIsObject= {
 };
 
 delete thisIsObject["Cow"]; //return true;
+https://stackoverflow.com/questions/208105/how-do-i-remove-a-property-from-a-javascript-object
+
+let myObject = {"ircEvent": "PRIVMSG", "method": "newURI", "regex": "^http://.*"};
+({ regex, ...myObject } = myObject);
+console.log(myObject);
 
 设置字符串为object属性名：
 es5:
