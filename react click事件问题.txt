@@ -1,0 +1,5 @@
+onClick={this.function(prams)}为何会直接触发，有参数
+需改为
+onClick={() => {this.function(prams)}}
+
+link:https://stackoverflow.com/questions/34226076/why-is-my-onclick-being-called-on-render-react-js
