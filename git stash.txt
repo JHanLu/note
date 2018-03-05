@@ -1,0 +1,6 @@
+git stash 存储
+git stash list 查看现有的存储
+git stash apply 应用最新的存储
+git stash apply stash@{2} 应用指定的存储
+git stash pop 来重新应用储藏，同时立刻将其从堆栈中移走
+git stash drop 删除存储
