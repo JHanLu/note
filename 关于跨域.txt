@@ -1,3 +1,12 @@
+同源策略（同域名，同端口，同协议）：
+http://store.company.com/dir/page.html
+
+http://store.company.com/dir2/other.html	成功
+http://store.company.com/dir/inner/another.html	成功
+https://store.company.com/secure.html	失败	不同协议 ( https和http )
+http://store.company.com:81/dir/etc.html	失败	不同端口 ( 81和80)
+http://news.company.com/dir/other.html	失败	不同域名 ( news和store )
+
 一、CORS
 Cross-Origin Resource Sharing(CORS) 是W3C为浏览器制定的可以跨域通信的规范
 CORS 需要客户端和服务器同时支持
