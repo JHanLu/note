@@ -1,0 +1,11 @@
+BFC（Block Formatting Contexts）块级格式化上下文
+描述：具有BFC特性的元素可以看作是隔离了的独立容器，容器里的元素不会在布局上影响到外面的元素，并且BFC具有普通容器所没有的一些特征
+
+触发条件：
+1. body根元素
+2. 浮动元素：float除none以外的值
+3. 绝对定位的元素：absolute，fixed
+4. display为inline-block、table-cells、flex
+5. overflow除了visible外的值（hidden、auto、scroll）
+
+https://zhuanlan.zhihu.com/p/25321647
