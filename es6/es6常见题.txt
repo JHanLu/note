@@ -1,0 +1,19 @@
+1.在箭头函数里，this的指向是定义时所在的对象，而不是使用时所在的对象
+2. 不能用作构造函数，也就是说不能使用new命令，会抛出错误
+3.没有arguments对象
+4.不能使用yield命令
+
+
+let和const具有块级作用域 // 原理是什么待定
+
+const text = "out";
+
+function a() {
+
+    console.log(text);
+
+    let text = "in";
+
+}
+
+a(); // Uncaught ReferenceError: text is not defined

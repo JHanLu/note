@@ -1,8 +1,7 @@
 插件：
 UglifyJsPlugin（压缩代码，去除空格等，减小文件体积）
+
 webpack.optimize.CommonsChunkPlugin (将"多次被引用"的文件打包到一个公用的js文件中)
-
-
 拆分文件：
 我们在使用的js库如vue或者react等的时候，webpack会将它们一起打包，
 react和react-dom文件就好几百k，全部打包成一个文件，可想而知，这个文件会很大，

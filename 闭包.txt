@@ -1,0 +1,18 @@
+简单来说，闭包是指可以访问另一个函数作用域变量的函数，一般是定义在外层函数中的内层函数。
+
+var getNum;
+function getCounter() {
+    var n = 1; 
+    var inner = function () { return n++; }
+    return inner;
+}
+
+getNum = getCounter();
+console.log(getNum()); //1 
+console.log(getNum()); //2 
+
+ 闭包的特性：
+
+ 1.函数内再嵌套函数
+ 2.内部函数可以引用外层的参数和变量
+ 3.参数和变量不会被垃圾回收机制回收
