@@ -1,0 +1,7 @@
+CSRF全称Cross Site Request Forgery，跨站请求伪造。CSRF是一种夹持用户在已经登陆的web应用程序上执行非本意的操作的攻击方式。
+相比于XSS，CSRF是利用了系统对页面浏览器的信任，XSS则利用了系统对用户的信任。
+
+三种防御手段：
+1.验证Http Referer字段
+2.在请求地址中添加token并验证
+3.在 HTTP 头中自定义属性并验证
