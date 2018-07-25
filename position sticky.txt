@@ -1,0 +1,6 @@
+position生效的条件：
+1. 必需设置top，bottom，right，left中的一个
+
+2. 元素的任意父节点都必须为overflow: visible
+任意父节点定位设置为 overflow:hidden，则父容器无法进行滚动，所以 position:sticky 元素也不会有滚动然后固定的情况。
+任意父节点定位设置为 position:relative | absolute | fixed，则元素相对父元素进行定位，而不会相对 viewprot 定位。

@@ -1,0 +1,3 @@
+// myComp是Comp的一个实例，因此需要findDOMNode转换为相应的DOM
+const myComp = this.refs.myComp;
+const dom = ReactDOM.findDOMNode(myComp);

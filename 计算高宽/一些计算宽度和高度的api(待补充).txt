@@ -1,0 +1,10 @@
+offsetHeight //返回元素的高度
+offsetWidth //返回元素的宽度
+offsetTop //返回元素的垂直偏移位置
+offsetLeft //返回元素的水平偏移位置
+
+
+//this one is useful
+Element.getBoundingClientRect()
+//返回一个DOMRect对象，这个对象包含了只读属性left, top, right和bottom
+还有width和height，除了width和height之外都是相对于视口的左上角而言
