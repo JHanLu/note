@@ -1,0 +1,7 @@
+.replace的第二个参数可以是回调函数
+
+例子：
+var regex = new RegExp(input, 'gi');//i为大小写不敏感，g为全局
+var resonse = text.replace(regex, function(str) {
+    return "<span style='background-color: yellow;'>" + str + "</span>";
+})
