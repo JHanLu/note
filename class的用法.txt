@@ -19,3 +19,23 @@ super可以当函数调用，也可以当对象使用
 1. super()在子类的constructor中调用，代表父类的构造函数。
 2. 作为对象时，指向父类的原型对象，定义在父类实例上的方法或属性无法通过super调用，如果定义在父类的原型
 对象上就可以取到
+
+加上static表明是类的静态属性, 即Class.propName，而不是定义在实例对象（this）上的属性。
+如果在一个方法前，加上static关键字，就表示该方法不会被实例继承，而是直接通过类来调用
+
+类的实例属性写法:
+class MyClass {
+  myProp = 42;
+
+  constructor() {
+    console.log(this.myProp); // 42
+  }
+}
+类的静态属性写法
+class MyClass {
+  static myStaticProp = 42;
+
+  constructor() {
+    console.log(MyClass.myStaticProp); // 42
+  }
+}
