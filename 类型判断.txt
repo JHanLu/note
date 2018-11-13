@@ -10,3 +10,7 @@ Array类型判断:
 function isArray(arr: any): boolean {
   return Array.isArray(arr);
 }
+Object类型判断
+function isObject(obj: any): boolean {
+  return typeof obj === 'object' || Object.prototype.toString.call(func) === '[object Object]'
+}

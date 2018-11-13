@@ -7,9 +7,21 @@
 共同点：都是从客户端缓存中得到。
 不同点：强缓存不与服务器交互，而协商缓存则需要与服务器交互。
 
-Cache-Control(Http 1.1标准)
-1.max-age会覆盖掉Expires
-2.s-maxage（共享缓存，如CDN缓存），覆盖max-age和Expires
+强缓存有两个字段来标示失效规则(Expires/Cache-Control)
+Expires的值为服务端返回的到期时间,请求时间小于服务端的到期时间则直接使用缓存数据.不过Expires是
+HTTP 1.0的东西, HTTP 1.1使用Cache-Control替代.
+Cache-Control常见的取值有private, public, no-cache, max-age, no-store, 默认为private,
+Max-age表示缓存的内容将在xxx秒后失效
+
+协商缓存需要客户端与服务端进行通讯,判断成功后返回304,通知客户端比较成功,可以使用缓存数据.
+协商缓存的头部信息
+Last-Modified / If-Modified-Since
+Last-Modified: 第一次请求时,服务器返回资源最后修改时间(响应头)
+If-Modified-Since: 再次请求时,浏览器通知服务器上次请求返回的最后修改时间(请求头)
+
+Etag / If-None-Match（优先级高于Last-Modified  /  If-Modified-Since）
+Etag: 第一次请求时,服务器赶回的资源唯一标识(响应头)
+If-None-Match: 再次请求, 浏览器通知服务器上次返回的唯一标示, 服务器进行比较(请求头)
 
 Last-Modified与ETag是可以一起使用的，服务器会优先验证ETag，一致的情况下，
 才会继续比对Last-Modified，最后才决定是否返回304。
