@@ -1,0 +1,5 @@
+curry的概念, 只传递给函数一部分参数来调用它, 让它返回一个函数去处理剩下的参数.
+例子: 
+const add = x => y => x+y;
+const increment = add(1);
+increment(2);

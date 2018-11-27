@@ -7,8 +7,6 @@ webpack.optimize.CommonsChunkPlugin (½«"¶à´Î±»ÒıÓÃ"µÄÎÄ¼ş´ò°üµ½Ò»¸ö¹«ÓÃµÄjsÎÄ¼şÖ
 reactºÍreact-domÎÄ¼ş¾ÍºÃ¼¸°Ùk£¬È«²¿´ò°ü³ÉÒ»¸öÎÄ¼ş£¬¿ÉÏë¶øÖª£¬Õâ¸öÎÄ¼ş»áºÜ´ó£¬
 ÓÃ»§ÔÚÊ×´Î´ò¿ªÊ±¾ÍÍùÍù»á³öÏÖ°×ÆÁµÈ´ıÊ±¼ä¹ı³¤µÄÎÊÌâ£¬ÕâÊ±£¬ÎÒÃÇ¾ÍĞèÒª½«ÕâÀàÎÄ¼ş³éÀë³öÀ´¡£
 
-
-
 ```
 externals: {
         "react": "React",
@@ -21,3 +19,21 @@ externals£¬ËüºÍpluginsÊÇÆ½¼¶¡£×ó²àkey±íÊ¾ÒÀÀµ£¬ÓÒ²àvalue±íÊ¾ÎÄ¼şÖĞÊ¹ÓÃµÄ¶ÔÏó,ÕâÑ
 ä¯ÀÀÆ÷×ÊÔ´»º´æ£º
 Ò»µ©ÎÒÃÇ¸üĞÂ°æ±¾Ö®ºó£¬¿Í»§Ã»ÓĞÈ¥Çå³ı»º´æ£¬Í¬Ê±»º´æ»¹Ã»ÓĞ¹ıÆÚµÄÇé¿öÏÂ£¬¾ÍÎŞ·¨¼ÓÔØµ½×îĞÂµÄ×ÊÔ´¡£
 ÕâÊ±ÎÒÃÇ¾ÍĞèÒªhashÖµÀ´½øĞĞ°æ±¾¿ØÖÆ¡£
+
+Webpack 4 tree-shaking:
+``` math.js
+export function square(x) {
+  return x * x;
+}
+
+export function cube(x) {
+  return x * x * x;
+}
+```
+
+```index.js
+Import {cube} from './math.js';
+```
+Òò´Ëfunction squareÎªdead code, tree shaking should shake square
+
+Happypack°ÑÈÎÎñ·Ö½â¸ø¶à¸ö×Ó½ø³ÌÈ¥²¢·¢µØÖ´ĞĞ,×Ó½ø³Ì´¦ÀíÍêÔÙ°Ñ½á¹û·µ»ØÖ÷½ø³Ì
