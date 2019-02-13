@@ -1,0 +1,7 @@
+在react的合成事件中，event.stopPropagation不工作时，需要使用
+event.nativeEvent.stopImmediatePropagation来阻止原生事件的冒泡
+见 https://segmentfault.com/a/1190000013343819
+
+stopImmediatePropagation还可用来阻止事件的捕获（stopPropagation也可以）
+如果有多个相同类型事件的事件监听函数绑定到同一个元素，当该类型的事件触发时，它们会按照被添加的顺序执行。如果其中某个监听函数执行了 event.stopImmediatePropagation() 方法，则当前元素剩下的监听函数将不会被执行。
+见 https://www.cnblogs.com/zhuzhenwei918/p/6139880.html

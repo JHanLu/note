@@ -1,0 +1,37 @@
+利用tranform拖拽原理：
+1. didMount时候使用计时器或者RAF获取实际的dom节点
+2. 记录mouseDown时候的x，y点（cLeft, cTop）
+3. 监听document的mouse move事件， 将transform的值设为当前鼠标位置与点击时位置的距离
+4. mouseUp的时候将当前的transform值保存起来，以便下一次拖动计算
+
+伪代码：
+  this.cLeft = 0; // 鼠标按下时的横坐标位置
+  this.cTop = 0; // 鼠标按下时的纵坐标位置
+  this.tLeft = 0; // 相对于刚开始时x轴偏移的位置
+  this.tTop = 0; // 相对于刚开始时y轴偏移的位置
+
+  onMouseDown = e => {
+    // 记录刚开始拖动时鼠标的位置
+    this.cLeft = e.clientX;
+    this.cTop = e.clientY;
+
+    this.onMouseMove(this.dragDom);
+  };
+
+  onMouseUp = e => {
+    document.onmousemove = null;
+
+    // 保存当前已偏离的位置
+    this.tLeft = e.clientX - this.cLeft + this.tLeft;
+    this.tTop = e.clientY - this.cTop + this.tTop;
+  };
+
+  onMouseMove = node => {
+    document.onmousemove = e => requestAnimationFrame(() => {
+      if (this.dragging) {
+        // 计算当前鼠标距离刚开始拖动时偏离的位置
+        node.style.transform = `translate(${e.clientX - this.cLeft + this.tLeft}px,
+	 ${e.clientY - this.cTop + this.tTop}px)`;
+      }
+    });
+  };

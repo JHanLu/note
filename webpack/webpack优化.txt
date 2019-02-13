@@ -37,3 +37,12 @@ Import {cube} from './math.js';
 因此function square为dead code, tree shaking should shake square
 
 Happypack把任务分解给多个子进程去并发地执行,子进程处理完再把结果返回主进程
+
+Code-splitting:
+ entry: {
+    index: './src/index.js',
+    another: './src/another-module.js'
+  }
+当两个entry point都引入同个资源，如lodash库，会造成两个打包后的包重复引入，加入code splitting会将公共部分分离成单独的chunck，并将其从main bundle中移除，减轻了大小
+
+tip: 如A引入了lodash，且A引入了B， B也引入了lodash，则不会重复引入lodash

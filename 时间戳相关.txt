@@ -1,0 +1,5 @@
+生成时间戳：
+Math.floor(Date.now / 1000)
+
+时间戳转时间
+new Date(timeStamp * 1000)
