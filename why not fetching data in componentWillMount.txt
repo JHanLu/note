@@ -1,0 +1,4 @@
+为什么不在componentWillMount中获取数据
+1. 在服务器渲染的情况下，componentWillMount会执行两次
+2.在componentWillMount中fetch data，数据一定在render后才能到达，如果你忘记了设置初始状态，用户体验不好，使用didmount则会提醒你设置init state。
+3. componentWillMount可能会被废弃

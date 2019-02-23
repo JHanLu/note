@@ -1,0 +1,10 @@
+方案一：
+var start = new Date();
+<code></code>
+var end = new Date();
+console.log(end - begin);
+
+方案二:
+console.time('XXX');
+<code></code>
+console.timeEnd('XXX');

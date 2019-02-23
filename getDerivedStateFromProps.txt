@@ -1,0 +1,18 @@
+getDerivedStateFromProps这个生命周期的意思是从props中获取state，这个生命周期函数
+是为了代替componentWillReceiveProps存在的
+然而两者的参数不同，getDerivedStateFromProps是一个静态函数，不能通过this访问到class的属性，
+而是通过nextProps和prevState进行判断，根据新传入的props来映射到state
+注意：如果props传入的内容不需要影响到你的state，则返回null，在函数的末尾
+
+例子：
+static getDerivedPropsFromProps(nextProps, prevState) {
+  const {type} = nextProps;
+  // 当传入的type发生变化的时候，更新state
+  if (type !== prevState.type) {
+  	return {
+	  type
+	};
+  }
+  // 否则，对于state不进行任何操作
+  return null;
+}
