@@ -1,5 +1,0 @@
-<tbody>
-  {[...Array(10)].map((x, i) =>
-    <ObjectRow key={i} />
-  )}
-</tbody>

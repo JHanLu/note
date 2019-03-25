@@ -1,0 +1,13 @@
+SVG去除title：
+{
+  loader: 'react-svg-loader',
+  options: {
+    svgo {
+      plugins: [
+        {...},
+        {...},
+        { removeTitle: true } // 要分开写，不能写在一起
+      ]
+    }
+  }
+}
