@@ -1,0 +1,2 @@
+git pull --rebase 不会添加新的提交记录
+git pull 默认为merge 会添加新的记录
